@@ -124,7 +124,7 @@ def password_reset_request(request):
             token = PasswordReset.create_token(user)
             
             reset_url = request.build_absolute_uri(reverse('set_new_password', args=[token.token]))
-            send_mail('Password Reset', f'Click here to reset your password: {reset_url}', 'hmareiwan@outlook.com', [user.email])
+            send_mail('Password Reset', f'Click here to reset your password: {reset_url}', 'mareiwanh@gmail.com', [user.email])
             return redirect('password_reset_done')
     else:
         form = PasswordResetRequestForm()
@@ -160,7 +160,7 @@ def employer_password_reset_request(request):
             token = PasswordReset.create_token(user)
             
             reset_url = request.build_absolute_uri(reverse('employer_set_new_password', args=[token.token]))
-            send_mail('Password Reset', f'Click here to reset your password: {reset_url}', 'hmareiwan@outlook.com', [user.email])
+            send_mail('Password Reset', f'Click here to reset your password: {reset_url}', 'mareiwanh@gmail.com', [user.email])
             return redirect('employer_password_reset_done')
     else:
         form = PasswordResetRequestForm()
@@ -382,8 +382,8 @@ def contact_view(request):
             email_to_owner = EmailMessage(
                 subject=f'New contact form submission from {contact.name}',
                 body=f"Name: {contact.name} \n\nEmail: {contact.email}: \n\nMessage: {contact.message}",
-                from_email='hmareiwan@outlook.com',
-                to=['hmareiwan@outlook.com'],
+                from_email='mareiwanh@gmail.com',
+                to=['mareiwanh@gmail.com'],
             )
             email_to_owner.send()
 
